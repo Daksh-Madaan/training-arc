@@ -1,7 +1,7 @@
 import numpy as np
 import numpy.random as random
 
-# Speed & Size
+# Speed & Size Advantage over Python in-builts
 def print_info(a1):
     a1.ndim, a1.shape, a1.dtype, a1.strides, a1.flags
 
@@ -23,7 +23,7 @@ print_info(a2)
 a3 = np.transpose(a2)
 print_info(a3)
 
-a1[1:4:2,1:4:2]
+a1[1:4:2,1:4:2] # rows x cols - start,end,skip
 
 a1[(a1>20) & (a1%2==0)]
 a1+a2
@@ -69,3 +69,44 @@ print(a3.shape,a3[:,np.newaxis].shape)
 np.identity(3)
 np.zeros((3,3))
 np.ones((3,3))
+np.transpose(a1)
+
+a1.itemsize
+a1.nbytes
+
+np.array([1,2,3,4,5,6,7,8,9],dtype=complex)
+
+#linspace - Linearly Spaced - (RangeLower,RangeUpper,NoOfItems) - All entries will be equally spaced
+
+np.linspace(-5,5,5)
+
+np.eye(3)
+np.eye(3) == np.identity(3)
+
+np.diag([1,3,5]) 
+
+# by default its int64 you can change that to
+np.array([1,2,3,4,5], dtype=np.int32)
+
+np.round(np.array([1.25,2.36,4.55]))
+np.floor(np.array([1.25,2.36,4.55]))
+np.ceil(np.array([1.25,2.36,4.55]))
+
+np.min([25,2,1,-1,55,6])
+np.max(a1,axis=0)
+np.sum(a2,axis=1)
+np.prod(a2,axis=1)
+
+np.dot(a1,a2)
+np.log(10)
+np.exp(a1)
+
+np.random.shuffle(a1) 
+
+np.ravel(a1) # N-D to 1-D
+
+print(np.vstack((a1,a2)))# 4x4 + 4x4 -- >  8x4
+print(np.hstack((a1,a2)))# 4x4 + 4x4 -- > 4x8
+
+print(np.hsplit(a1,2)) # Actually  |
+print(np.vsplit(a1,2)) # Actually -
