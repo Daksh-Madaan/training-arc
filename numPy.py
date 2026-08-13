@@ -106,7 +106,7 @@ np.dot(a1,a2)
 np.log(10)
 np.exp(a1)
 
-np.random.shuffle(a1) 
+# np.random.shuffle(a1) Impacts original
 
 np.ravel(a1) # N-D to 1-D
 
@@ -174,6 +174,7 @@ a8 = np.array([1,2,3,4,5,6,np.nan,8,9,np.nan,11])
 
 a8 = a8[~(np.isnan(a8))]
 
+"""
 # Plotting Graphs
 import matplotlib.pyplot as plt
 x = np.linspace(-10,10,100)
@@ -198,3 +199,53 @@ plt.show()
 y = x*np.log(x)
 plt.plot(x,y)
 plt.show()
+
+"""
+
+np.sort([10,12,5,74,19,84,52,37,68])
+np.sort(a1) # Even works on n-d arrays, sorts rows (default axis = 1)
+np.sort(a1,axis=0) # col 
+np.sort(a1)[::-1] #descending
+
+r = np.array([12,55,85,69,44,47,23])
+print(np.append(r,400)) #no modification, return new array with change
+print(np.append(a1,np.random.random((a1.shape[0],1)),axis=1))
+
+np.concatenate((a1,a2),axis=1) #hstack and vstack like
+
+np.unique([10,10,22,24,25,24,22])
+
+print(np.expand_dims(r,axis=0))
+print(np.expand_dims(r,axis=1))
+
+np.where(r>50) #returns indices - basic use
+np.where(r>50,1,0) # (Condition,True,False)
+
+np.argmax(a1,axis=0)
+np.argmin(a1,axis=1)
+
+print(np.cumsum(a1,axis=1))
+print(np.cumprod(a1,axis=0))
+
+np.flip(r)
+print(np.flip(a1)) # flips both
+print(np.flip(a1,axis=0))
+print(np.flip(a1,axis=1))
+
+np.percentile(a1,50)
+np.histogram([10,10,10,15,15,14,14,7,7], bins=[0,5,10,15,20,25])
+
+np.corrcoef([[10,5],[2,1]],[[22,8],[0,2]])
+np.isin([20,1,5,14,15],[10,10,15,14,18,16,19,20,22]) #(to be searched for, array) - > Bool Array
+
+np.put(r,[0,1],[0,0]) # (array,indices to be changes, replaced new values) -> impacts original
+print(r)
+
+print(np.delete(r,[0,1]))
+
+np.union1d([1,2,3,4,5],[1,3,5])
+np.intersect1d([1,2,3,4,5],[1,3,5])
+np.setdiff1d([1,2,3,4,5],[1,3,5])
+np.setxor1d([1,2,3,4,5],[1,3,5,7,9])
+
+print(np.clip(r,20,35)) # maintains a range, larger value replaced by upper limit, similarly for lower limits
