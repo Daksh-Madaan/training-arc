@@ -1,0 +1,19 @@
+[project]
+name = "second"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Daksh Madaan", email = "65502702+Daksh-Madaan@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.151.0",
+]
+
+[project.scripts]
+second = "second:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"

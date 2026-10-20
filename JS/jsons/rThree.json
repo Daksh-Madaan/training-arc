@@ -1,7 +1,0 @@
-[
-    {"name":"Kia Seltos", "year":2020, "type":"SUV"},
-    {"name":"Hyundai Tucson", "year":2021, "type":"SUV"},
-    {"name":"Toyota RAV4", "year":2022, "type":"SUV"},
-    {"name":"Honda CR-V", "year":2023, "type":"SUV"},
-    {"name":"Mazda CX-5", "year":2024, "type":"SUV"}
-]
